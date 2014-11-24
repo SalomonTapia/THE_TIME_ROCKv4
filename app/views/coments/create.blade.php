@@ -1,1 +1,6 @@
-/var/www/laravel/THE_TIME_ROCK2/app/views/coments/create.blade.php
+@section('main')
+<h2>Nuevo Comentario</h2>
+{{Form::model(new Coment, ['route'=>['coments.store']]) }}
+@include('occations/partials/_form',['submit_text'=>'Registrar comentario'])
+{{Form::close()}}
+@stop

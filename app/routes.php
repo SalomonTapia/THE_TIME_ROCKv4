@@ -29,10 +29,16 @@ Route::bind('discographyes',function($value, $route) {
 	return Discography::whereId($value)->first();
 });
 Route::resource("discographyes", "DiscographyesController");
-Route::resource('discographyes.coments','ComentsController');
+Route::resource('discographyes.comentds','ComentdsController');
+
 Route::resource('occations','OccationsController');
 Route::resource('occations.coments','ComentsController');
+
 Route::resource("users","UsersController");
+
 Route::resource("reports","ReportsController");
-Route::resource('reports.coments','ComentsController');
+Route::resource('reports.comentrs','ComentrsController');
+
 Route::resource("coments","ComentsController");
+Route::resource("comentrs","ComentrsController");
+Route::resource("comentds","ComentdsController");
