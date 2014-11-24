@@ -62,7 +62,7 @@ class OccationsController extends \BaseController {
 	 */
 	public function edit(Occation $occation)
 	{
-		$this->layout->content = View::make('occations.edit', compact('occations'));
+		$this->layout->content = View::make('occations.edit', compact('occation'));
 	}
 
 	/**

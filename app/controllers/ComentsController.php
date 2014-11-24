@@ -22,7 +22,7 @@ class ComentsController extends \BaseController {
 	 */
 	public function create()
 	{
-		$this->layout->content = View::make('coments.create', compact('coments'));
+		$this->layout->content = View::make('coments.create', compact('coment'));
 	}
 
 	/**
@@ -50,7 +50,7 @@ class ComentsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$this->layout->content = View::make('coments.show', compact('coments'));
+		$this->layout->content = View::make('coments.show', compact('coment'));
 	}
 
 	/**
