@@ -15,3 +15,24 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::model('occations','Occation');
+Route::bind('occations',function($value, $route) {
+	return Occation::whereId($value)->first();
+});
+Route::model('reports','Report');
+Route::bind('reports',function($value, $route) {
+	return Report::whereId($value)->first();
+});
+Route::model('discographyes','Discography');
+Route::bind('discographyes',function($value, $route) {
+	return Discography::whereId($value)->first();
+});
+Route::resource("discographyes", "DiscographyesController");
+Route::resource('discographyes.coments','ComentsController');
+Route::resource('occations','OccationsController');
+Route::resource('occations.coments','ComentsController');
+Route::resource("users","UsersController");
+Route::resource("reports","ReportsController");
+Route::resource('reports.coments','ComentsController');
+Route::resource("coments","ComentsController");
