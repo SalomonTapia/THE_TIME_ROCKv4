@@ -22,7 +22,11 @@ class ComentsController extends \BaseController {
 	 */
 	public function create()
 	{
+<<<<<<< HEAD
 		$this->layout->content = View::make('coments.create', compact('coment'));
+=======
+		$this->layout->content = View::make('coments.create', compact('coments'));
+>>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	}
 
 	/**
@@ -32,13 +36,21 @@ class ComentsController extends \BaseController {
 	 * @param Occation $occation
 	 * @return Response
 	 */
+<<<<<<< HEAD
 	public function store(Occation $occation)
+=======
+	public function store()
+>>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	{
 		$imput=Input::all();
 		$imput['occation_id'] = $occation->id;
 		$imput['user_id'] = 1;
 		Coment::create($imput);
+<<<<<<< HEAD
 		return Redirect::route('occations.show',$occation->id)->with('Comentario guardado');
+=======
+		return Redirect::route('occations.show',$occation->id)->with('Comentario guardado.');
+>>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	}
 
 	/**
@@ -50,7 +62,11 @@ class ComentsController extends \BaseController {
 	 */
 	public function show($id)
 	{
+<<<<<<< HEAD
 		$this->layout->content = View::make('coments.show', compact('coment'));
+=======
+		$this->layout->content = View::make('coments.show', compact('coments'));
+>>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	}
 
 	/**
@@ -88,7 +104,11 @@ class ComentsController extends \BaseController {
 	{
 		$coment = Coment::find($id);
 		$coment->delete();
+<<<<<<< HEAD
 		return Redirect::route('coments.destroy', $coment->$id)->with('message', 'comentario eliminado');
+=======
+		return Redirect::route('coments.destroy', $coments->$id)->with('message', 'comentario eliminado');
+>>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	}
 
 }

@@ -10,7 +10,11 @@ class DiscographyesController extends \BaseController {
 	 */
 	public function index()
 	{
+<<<<<<< HEAD
 		$discographyes = Discography::all();
+=======
+		$discographyes = Discographye::all();
+>>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 		$this->layout->content = View::make('discographyes.index', compact('discographyes'));
 	}
 
@@ -28,15 +32,24 @@ class DiscographyesController extends \BaseController {
 	/**
 	 * Store a newly created resource in storage.
 	 * POST /discographyes
+<<<<<<< HEAD
 	 *
+=======
+	 * 
+>>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	 * @return Response
 	 */
 	public function store()
 	{
 		$input=Input::all();
 		$input['user_id']=1;
+<<<<<<< HEAD
 		Discography::create($input);
 		return Redirect::route('discographyes.index')->with('message','El nuevo evento se ha creado');
+=======
+		Discographye::create($input);
+		return Redirect::route('discographyes.index')->with('message','La nueva Discografía se ha Creado');
+>>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	}
 
 	/**
