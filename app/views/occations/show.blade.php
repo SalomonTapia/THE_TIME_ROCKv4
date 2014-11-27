@@ -14,4 +14,8 @@
 	<strong>Descripcion:</strong>
 	{{$occation->desc_evento}}
 </p>
+<p>
+	<strong>Lugar:</strong>
+	{{$occation->lugar}}
+</p>
 @stop

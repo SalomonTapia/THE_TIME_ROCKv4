@@ -43,13 +43,13 @@ class DiscographyesController extends \BaseController {
 	 * Display the specified resource.
 	 * GET /discographyes/{id}
 	 *
-	 * @param  Discography $discography
+	 * @param  Discographye $discographye
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show(Discography $discography)
+	public function show(Discographye $discographye)
 	{
-		$this->layout->content = View::make('discographyes.show', compact('discographyes'));
+		$this->layout->content = View::make('discographyes.show', compact('discographye'));
 	}
 
 	/**

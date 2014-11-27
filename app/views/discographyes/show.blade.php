@@ -1,15 +1,15 @@
 @section('main')
 <font color="blue">
-	<h2>{{$discography->nombre}}</h2>
+	<h2>{{$discographye->nombre}}</h2>
 </font>
 
 <strong>
 	<span>
-		Por:{{$discography->user->usuario}} el {{$discography->created_at}}
+		Por:{{$discographye->user->usuario}} el {{$discographye->created_at}}
 	</span>
 </strong>
 <p>
 <strong>Descripcion:</strong>
-	{{$discography->descripcion}}
+	{{$discographye->descripcion}}
 </p>
 @stop

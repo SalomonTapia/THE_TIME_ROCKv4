@@ -49,7 +49,7 @@ class OccationsController extends \BaseController {
 	public function show(Occation $occation)
 	{
 		//$occation = Occation::all();
-		$this->layout->content = View::make('occations.show', compact('occations'));
+		$this->layout->content = View::make('occations.show', compact('occation'));
 	}
 
 	/**

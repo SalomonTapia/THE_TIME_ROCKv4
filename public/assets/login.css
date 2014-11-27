@@ -1,0 +1,14 @@
+html{
+	margin: 0px;
+	padding: 0px;
+}
+.boxlogin{
+	border-radius: 4px;
+	margin: 100px auto;
+	width: 320px;
+	-webki-border-radius: 4px;
+	-moz- border-radius: 4px;
+}
+input [ type="submit" ]{
+	margin-top: 15px;
+}

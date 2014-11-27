@@ -26,7 +26,7 @@ Route::bind('reports',function($value, $route) {
 });
 Route::model('discographyes','Discography');
 Route::bind('discographyes',function($value, $route) {
-	return Discography::whereId($value)->first();
+	return Discographye::whereId($value)->first();
 });
 Route::resource("discographyes", "DiscographyesController");
 Route::resource('discographyes.comentds','ComentdsController');
