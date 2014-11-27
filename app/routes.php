@@ -30,9 +30,24 @@ Route::bind('discographyes',function($value, $route) {
 });
 Route::resource("discographyes", "DiscographyesController");
 Route::resource('discographyes.comentds','ComentdsController');
+<<<<<<< HEAD
+
+Route::resource('occations','OccationsController');
+Route::resource('occations.coments','ComentsController');
+
+Route::resource("users","UsersController");
+
+Route::resource("reports","ReportsController");
+Route::resource('reports.comentrs','ComentrsController');
+
+Route::resource("coments","ComentsController");
+Route::resource("comentrs","ComentrsController");
+Route::resource("comentds","ComentdsController");
+=======
 Route::resource('occations','OccationsController');
 Route::resource('occations.coments','ComentsController');
 Route::resource("users","UsersController");
 Route::resource("reports","ReportsController");
 Route::resource('reports.comentrs','ComentrsController');
 Route::resource("coments","ComentsController");
+>>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe

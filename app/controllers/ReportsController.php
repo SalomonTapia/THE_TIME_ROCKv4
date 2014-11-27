@@ -49,7 +49,11 @@ class ReportsController extends \BaseController {
 	 */
 	public function show(Report $report)
 	{
+<<<<<<< HEAD
+		$this->layout->content = View::make('reports.show', compact('reports'));
+=======
 		$this->layout->content = View::make('reports.show', compact('report'));
+>>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	}
 
 	/**

@@ -28,8 +28,13 @@ class ComentrsController extends \BaseController {
 	/**
 	 * Store a newly created resource in storage.
 	 * POST /comentrs
+<<<<<<< HEAD
+	 *
+	 * @param Report $report
+=======
 	 * 
 	 * Reportr $report
+>>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	 * @return Response
 	 */
 	public function store()
@@ -37,8 +42,13 @@ class ComentrsController extends \BaseController {
 		$imput=Input::all();
 		$imput['report_id'] = $report->id;
 		$imput['user_id'] = 1;
+<<<<<<< HEAD
+		Coment::create($imput);
+		return Redirect::route('reportrs.show',$report->id)->with('Comentario guardado.');
+=======
 		Comentr::create($imput);
 		return Redirect::route('reports.show',$report->id)->with('Comentario guardado.');
+>>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	}
 
 	/**
@@ -50,7 +60,11 @@ class ComentrsController extends \BaseController {
 	 */
 	public function show($id)
 	{
+<<<<<<< HEAD
+		$this->layout->content = View::make('comentrs.show', compact('comentrs'));
+=======
 		//
+>>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	}
 
 	/**
@@ -62,7 +76,11 @@ class ComentrsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
+<<<<<<< HEAD
+		$this->layout->content = View::make('comentrs.edit', compact('coment'));
+=======
 		//
+>>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	}
 
 	/**
@@ -86,7 +104,13 @@ class ComentrsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
+<<<<<<< HEAD
+		$comentr = Coment::find($id);
+		$comentr->delete();
+		return Redirect::route('comentrs.destroy', $comentrs->$id)->with('message', 'comentario eliminado');
+=======
 		//
+>>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	}
 
 }

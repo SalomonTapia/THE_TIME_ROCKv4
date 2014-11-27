@@ -49,7 +49,11 @@ class OccationsController extends \BaseController {
 	public function show(Occation $occation)
 	{
 		//$occation = Occation::all();
+<<<<<<< HEAD
+		$this->layout->content = View::make('occations.show', compact('occation'));
+=======
 		$this->layout->content = View::make('occations.show', compact('occations'));
+>>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	}
 
 	/**
@@ -62,7 +66,11 @@ class OccationsController extends \BaseController {
 	 */
 	public function edit(Occation $occation)
 	{
+<<<<<<< HEAD
+		$this->layout->content = View::make('occations.edit', compact('occation'));
+=======
 		$this->layout->content = View::make('occations.edit', compact('occations'));
+>>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	}
 
 	/**
