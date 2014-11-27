@@ -28,6 +28,11 @@ Route::model('discographyes','Discography');
 Route::bind('discographyes',function($value, $route) {
 	return Discographye::whereId($value)->first();
 });
+
+Route::model('users','User');
+Route::bind('users',function($value, $route) {
+	return User::whereId($value)->first();
+});
 Route::resource("discographyes", "DiscographyesController");
 Route::resource('discographyes.comentds','ComentdsController');
 Route::resource('occations','OccationsController');
@@ -36,3 +41,4 @@ Route::resource("users","UsersController");
 Route::resource("reports","ReportsController");
 Route::resource('reports.comentrs','ComentrsController');
 Route::resource("coments","ComentsController");
+Route::resource("users", "UsersController");
