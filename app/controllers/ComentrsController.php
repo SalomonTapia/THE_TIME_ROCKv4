@@ -10,7 +10,7 @@ class ComentrsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$coments = Comentr::all();
+		$comentrs = Coment::all();
 		$this->layout->content = View::make('comentrs.index', compact('comentrs'));
 	}
 
@@ -22,33 +22,24 @@ class ComentrsController extends \BaseController {
 	 */
 	public function create()
 	{
-		$this->layout->content = View::make('comentrs.create', compact('comentrs'));
+		$this->layout->content = View::make('comentrs.create', compact('comentr'));
 	}
 
 	/**
 	 * Store a newly created resource in storage.
 	 * POST /comentrs
-<<<<<<< HEAD
 	 *
 	 * @param Report $report
-=======
 	 * 
-	 * Reportr $report
->>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	 * @return Response
 	 */
-	public function store()
+	public function store(Report $report)
 	{
 		$imput=Input::all();
 		$imput['report_id'] = $report->id;
 		$imput['user_id'] = 1;
-<<<<<<< HEAD
-		Coment::create($imput);
-		return Redirect::route('reportrs.show',$report->id)->with('Comentario guardado.');
-=======
 		Comentr::create($imput);
 		return Redirect::route('reports.show',$report->id)->with('Comentario guardado.');
->>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	}
 
 	/**
@@ -60,11 +51,7 @@ class ComentrsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-<<<<<<< HEAD
-		$this->layout->content = View::make('comentrs.show', compact('comentrs'));
-=======
-		//
->>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
+		$this->layout->content = View::make('comentrs.show', compact('comentr'));
 	}
 
 	/**
@@ -76,11 +63,7 @@ class ComentrsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-<<<<<<< HEAD
-		$this->layout->content = View::make('comentrs.edit', compact('coment'));
-=======
-		//
->>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
+		$this->layout->content = View::make('comentrs.edit', compact('comentr'));
 	}
 
 	/**
@@ -104,13 +87,9 @@ class ComentrsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-<<<<<<< HEAD
-		$comentr = Coment::find($id);
-		$comentr->delete();
-		return Redirect::route('comentrs.destroy', $comentrs->$id)->with('message', 'comentario eliminado');
-=======
-		//
->>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
+		$coment = Coment::find($id);
+		$coment->delete();
+		return Redirect::route('comentrs.destroy', $coment->$id)->with('message', 'comentario eliminado');
 	}
 
 }

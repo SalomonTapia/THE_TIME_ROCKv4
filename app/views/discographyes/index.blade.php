@@ -1,10 +1,10 @@
 @section('main')
 <h2>Discografías</h2>
-@if (!$discographyes->count())
+@if (!$discography->count())
 Aun  no has creado ninguna discografía
 @else
 <ul>
-	@foreach($discographyes as $discography)
+	@foreach($discography as $discography)
 	<li>
 		<a href="{{route('discographyes.show',$discography->id)}}">
 		<strong>{{$discography->nombre}}</strong>

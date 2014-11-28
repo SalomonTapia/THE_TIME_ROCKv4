@@ -11,7 +11,7 @@
 	{{$occation->lugar}}
 </p>
 <p>
-<<<<<<< HEAD
+
 	<strong>Descripcion:</strong><br>
 	{{$occation->desc_evento}}
 </p>
@@ -45,9 +45,5 @@
 <p>
 	{{link_to_route('occations.edit','Editar evento', $occation->id)}}
 </p>
-=======
-	<strong>Descripcion:</strong>
-	{{$occation->desc_evento}}
 </p>
->>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 @stop

@@ -10,29 +10,36 @@ class ComentdsController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$comentds = Comentd::all();
+		$this->layout->content = View::make('comentds.index', compact('comentd'));
 	}
 
 	/**
 	 * Show the form for creating a new resource.
 	 * GET /comentds/create
 	 *
+	 * 
 	 * @return Response
 	 */
 	public function create()
 	{
-		//
+		$this->layout->content = View::make('comentds.create', compact('comentd'));
 	}
 
 	/**
 	 * Store a newly created resource in storage.
 	 * POST /comentds
 	 *
+	 * @param Discographye $discography
 	 * @return Response
 	 */
-	public function store()
+	public function store(Discographye $discography)
 	{
-		//
+		$imput=Input::all();
+		$imput['discography_id'] = $discography->id;
+		$imput['user_id'] = 1;
+		Comentd::create($imput);
+		return Redirect::route('discographyes.show',$discography->id)->with('Comentario guardado');
 	}
 
 	/**
@@ -44,7 +51,7 @@ class ComentdsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$this->layout->content = View::make('discographyes.show', compact('comentd'));
 	}
 
 	/**
@@ -56,7 +63,7 @@ class ComentdsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$this->layout->content = View::make('comentds.create', compact('comentd'));
 	}
 
 	/**
@@ -80,7 +87,9 @@ class ComentdsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$coment = Comentd::find($id);
+		$coment->delete();
+		return Redirect::route('comentds.destroy', $coment->$id)->with('message', 'comentario eliminado');
 	}
 
 }

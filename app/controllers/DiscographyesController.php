@@ -10,12 +10,8 @@ class DiscographyesController extends \BaseController {
 	 */
 	public function index()
 	{
-<<<<<<< HEAD
-		$discographyes = Discography::all();
-=======
-		$discographyes = Discographye::all();
->>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
-		$this->layout->content = View::make('discographyes.index', compact('discographyes'));
+		$discography = Discographye::all();
+		$this->layout->content = View::make('discographyes.index', compact('discography'));
 	}
 
 	/**
@@ -26,30 +22,22 @@ class DiscographyesController extends \BaseController {
 	 */
 	public function create()
 	{
-		$this->layout->content = View::make('discographyes.create', compact('discographyes'));
+		$this->layout->content = View::make('discographyes.create', compact('discography'));
 	}
 
 	/**
 	 * Store a newly created resource in storage.
 	 * POST /discographyes
-<<<<<<< HEAD
 	 *
-=======
 	 * 
->>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 	 * @return Response
 	 */
 	public function store()
 	{
 		$input=Input::all();
 		$input['user_id']=1;
-<<<<<<< HEAD
-		Discography::create($input);
-		return Redirect::route('discographyes.index')->with('message','El nuevo evento se ha creado');
-=======
 		Discographye::create($input);
-		return Redirect::route('discographyes.index')->with('message','La nueva Discografía se ha Creado');
->>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
+		return Redirect::route('discographyes.index')->with('message','El nuevo evento se ha creado');
 	}
 
 	/**
@@ -60,33 +48,33 @@ class DiscographyesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show(Discography $discography)
+	public function show(Discographye $discography)
 	{
-		$this->layout->content = View::make('discographyes.show', compact('discographyes'));
+		$this->layout->content = View::make('discographyes.show', compact('discography'));
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
 	 * GET /discographyes/{id}/edit
 	 *
-	 * @param  Discography $discography
+	 * @param  Discographye $discography
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit(Discography $discography)
+	public function edit(Discographye $discography)
 	{
-		$this->layout->content = View::make('discographyes.edit', compact('discographyes'));
+		$this->layout->content = View::make('discographyes.edit', compact('discography'));
 	}
 
 	/**
 	 * Update the specified resource in storage.
 	 * PUT /discographyes/{id}
 	 *
-	 * @param  Discography $discography
+	 * @param  Discographye $discography
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(Discography $discography)
+	public function update(Discographye $discography)
 	{
 		$input = array_except(Input::all(), '_method');
 		$discography->update($input);

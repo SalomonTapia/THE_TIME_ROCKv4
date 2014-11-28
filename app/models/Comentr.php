@@ -1,9 +1,8 @@
 <?php
 
 class Comentr extends \Eloquent {
-<<<<<<< HEAD
-	protected $fillable = ['coment','user_id','occation_id'];
-	public function Occation()
+	protected $fillable = ['coment','user_id','report_id'];
+	public function Report()
 	{
 		return $this->belongsTo('Report');
 	}
@@ -12,7 +11,4 @@ class Comentr extends \Eloquent {
 	{
 		return $this->belongsTo('User');
 	}
-=======
-	protected $fillable = [];
->>>>>>> 0e427d60730f5eb9e21e12d618fbea0e7f0cc6fe
 }
