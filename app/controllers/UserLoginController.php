@@ -1,61 +1,54 @@
 <?php
 
-class ComentrsController extends \BaseController {
+class UserLogin extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /comentrs
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		$coments = Comentr::all();
-		$this->layout->content = View::make('comentrs.index', compact('comentrs'));
+		//
 	}
+
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /comentrs/create
 	 *
 	 * @return Response
 	 */
 	public function create()
 	{
-		$this->layout->content = View::make('comentrs.create', compact('comentrs'));
+		//
 	}
+
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /comentrs
-	 * 
-	 * @param Reportr $report
+	 *
 	 * @return Response
 	 */
-	public function store(Reportr $report)
+	public function store()
 	{
-		$input=Input::all();
-		$input['report_id'] = $report->id;
-		$input['user_id'] = 1;
-		Comentr::create($input);
-		return Redirect::route('reports.create',$report->id)->with('Comentario guardado.');
+		//
 	}
+
 
 	/**
 	 * Display the specified resource.
-	 * GET /comentrs/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function show($id)
 	{
-		$this->layout->content = View::make('comentrs.show', compact('comentrs'));
+		//
 	}
+
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /comentrs/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -65,9 +58,9 @@ class ComentrsController extends \BaseController {
 		//
 	}
 
+
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /comentrs/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -77,9 +70,9 @@ class ComentrsController extends \BaseController {
 		//
 	}
 
+
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /comentrs/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -88,5 +81,22 @@ class ComentrsController extends \BaseController {
 	{
 		//
 	}
+
+public function user()
+{
+	$userdata = array('usuario'=>Input::get('username'),
+					  'password'=>Input::get('password') 
+	);
+
+	if (Auth::attempt($userdata)) {
+		# code...
+
+		return View::make('occations');
+	}
+	else
+	{
+		return Redirect::to('/')->with('login_errors',true);
+	}
+}
 
 }

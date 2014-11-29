@@ -13,8 +13,11 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('login');
 });
+
+Route::post('login', 'UserLoginController@user');
+
 
 Route::model('occations','Occation');
 Route::bind('occations',function($value, $route) {
