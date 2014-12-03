@@ -12,25 +12,36 @@
 */
 
 Route::get('/', function()
-{
-	return View::make('hello');
+{ 
+	//return View::make('login');
+	return Redirect::to('login');
 });
 
-Route::model('occations','Occation');
-Route::bind('occations',function($value, $route) {
-	return Occation::whereId($value)->first();
+//Route::post('login', 'UserLogin@User');
+
+Route::get('login', array('uses' => 'HomeController@showLogin'));
+Route::post('login', array('uses' => 'HomeController@doLogin'));
+Route::get('logout', array('uses' => 'HomeController@doLogout'));
+
+Route::group(array('before' => 'auth' ),function()
+{
+
+	Route::model('occations','Occation');
+	Route::bind('occations',function($value, $route) {
+		return Occation::whereId($value)->first(); 	
+	});
+	Route::model('reports','Report');
+	Route::bind('reports',function($value, $route) {
+		return Report::whereId($value)->first();
+	});
+	Route::model('discographyes','Discography');
+	Route::bind('discographyes',function($value, $route) {
+		return Discography::whereId($value)->first();
+	});
+	Route::resource("discographyes", "DiscographyesController");
+	Route::resource('occations','OccationsController');
+	Route::resource('occations.coments','ComentsController');
+	Route::resource('users',"UsersController");
+	Route::resource("reports","ReportsController");
+	Route::resource("coments","ComentsController");
 });
-Route::model('reports','Report');
-Route::bind('reports',function($value, $route) {
-	return Report::whereId($value)->first();
-});
-Route::model('discographyes','Discography');
-Route::bind('discographyes',function($value, $route) {
-	return Discography::whereId($value)->first();
-});
-Route::resource("discographyes", "DiscographyesController");
-Route::resource('occations','OccationsController');
-Route::resource('occations.coments','ComentsController');
-Route::resource("users","UsersController");
-Route::resource("reports","ReportsController");
-Route::resource("coments","ComentsController");
