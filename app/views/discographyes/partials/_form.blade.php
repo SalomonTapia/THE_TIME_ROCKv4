@@ -20,7 +20,7 @@
 	</div>
 	<div class="form-group">
 		{{Form::label('imagen','Imagen: ')}}
-		{{Form::text('imagen',null, array('class' => 'form-control'))  }}
+		{{Form::file('imagen',null, array('class' => 'form-control'))  }}
 	</div>
 	<div class="form-actions">
 		{{Form::submit($submit_text, array('class' => 'btn btn-primary')) }}

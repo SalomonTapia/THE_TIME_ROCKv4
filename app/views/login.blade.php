@@ -8,6 +8,8 @@
         <?php echo HTML::style("css/login.css"); ?> 
 	     </head>    
          <body>
+         <div>
+         <img src="/assets/rock2.jpg">
         <div id="container">
             <div id="logo">
                 <img src="img/logo.png" alt="" width="50" height="150">
@@ -27,7 +29,7 @@
                         <input class="form-control" id="password" placeholder="Contraseña" type="password" name="password"/>
                     </div>
                     <div>
-                        <input type="checkbox" name="remember" value="1">No Cerrar Sesion</input>
+                        <input type="checkbox" name="remember" value="1">Recuerdame</input>
                     </div>
                     <div class="form-actions clearfix">                      
                         <input class="btn btn-block btn-primary btn-default" value="Acceder" type="submit"/>
@@ -35,13 +37,20 @@
                
                 </form>
                 </div>
-       -<p align="center">
--       {{link_to_route('users.create','Agregar Usuario')}}
-        -</p>
-
+                <div>
+                   -<p align="center">
+            -       {{link_to_route('users.create','Registrate')}}
+                    -</p>
+                </div>
+                <div>
+                    -<p align="center">
+            -       {{link_to_route('users.create','Acceder como Invitado')}}
+                    -</p>
+                </div>
 
         <?php echo HTML::script("js/jquery.js"); ?> 
         <?php echo HTML::script("js/jquery-ui.js"); ?> 
         <?php echo HTML::script("js/login.js"); ?>  
+        </div>
 </body>
 </html>

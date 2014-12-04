@@ -33,7 +33,10 @@ class UsersController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$input=Input::all();
+		$input['user_id']=1;
+		User::create($input);
+		return Redirect::route('users.index')->with('message','El Nuevo usuario se ha creado');
 	}
 
 	/**

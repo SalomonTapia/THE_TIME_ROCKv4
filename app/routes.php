@@ -27,6 +27,11 @@ Route::get('login', array('uses' => 'HomeController@showLogin'));
 Route::post('login', array('uses' => 'HomeController@doLogin'));
 
 //Route::get('logout', array('uses' => 'HomeController@doLogout'));
+Route::model('users', 'User');
+Route::bind ('users', function($value, $route){
+	return User::whereId($value)->first();
+});
+Route::resource("users","UsersController"); 
 
 Route::group(array('before' => 'auth' ),function()
 {
@@ -41,15 +46,14 @@ Route::group(array('before' => 'auth' ),function()
 	});
 	Route::model('discographyes','Discography');
 	Route::bind('discographyes',function($value, $route) {
-		return Discography::whereId($value)->first();
+		return Discographye::whereId($value)->first();
 	});
 	Route::resource("discographyes", "DiscographyesController");
 	Route::resource('discographyes.comentds','ComentdsController');
 	Route::resource('occations','OccationsController');
 	Route::resource('occations.coments','ComentsController');
-	Route::resource("users","UsersController");
 	Route::resource("reports","ReportsController");
 	Route::resource('reports.comentrs','ComentrsController');
 	Route::resource("coments","ComentsController");
-	Route::resource("users", "UsersController");
+	
 });

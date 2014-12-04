@@ -7,6 +7,7 @@
     <title>THE TIME ROCK</title>
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/bootstrap.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/assets/logo.ico">
     <script type="text/javascript" src="<?= url('/assets/ckeditor/ckeditor.js')?>"></script>
     <script>CKEDITOR.replace('content');</script>
 
@@ -38,7 +39,7 @@
         </div>
         <div class="collapse navbar-collapse main-menu" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="dropdown">
+            <li class="dropdown">   
               <a class="dropdown-toggle" data-toggle="dropdown"><font color="red"><strong>Noticias </strong></font><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="http://localhost:8000/reports">Mis noticias</a></li>
