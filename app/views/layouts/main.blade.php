@@ -66,14 +66,32 @@
             </div>
             <button type="submit" class="btn btn-default">Buscar</button>
           </form>
+
+
+        <p class="nav navbar-nav navbar-right" font color="red">
+        
+        {{ Auth::user()->usuario}}
+                  
+        </p>
+        
+          
+        </p>          
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
+
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><font color="red"><strong>Cuenta</strong></font><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="http://localhost:8000/users">Mi cuenta</a></li>
                 <li><a href="#">Configuración</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Salir</a></li>
+                <li>
+                  @if ( Auth::check())
+                  <a href="{{ URL::to ('logout') }}">Cerrar Sesion</a>
+                  @else
+                  <a href="{{ URL::to ('login') }}">Login</a>
+                  @endif
+
+                </li>
               </ul>
             </li>
           </ul>

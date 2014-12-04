@@ -11,7 +11,6 @@ var login_recover = $('#loginform, #recoverform');
 var login_register = $('#loginform, #registerform');
 var recover_register = $('#recoverform, #registerform');
 var loginbox = $('#loginbox');
-var userbox = $('#user');
 var animation_speed = 300;
 
 $(document).ready(function(){
@@ -48,18 +47,18 @@ $(document).ready(function(){
             highlight_error(passinput);
             loginbox.effect('shake');
             return false;
-        } else {
+        } 
+        else {
             e.preventDefault();
-            loginbox.animate({'top':'+=100px','opacity':'0'},250,function(){
-                $('.user_name').text(userinput.val());
-                userbox.animate({'top':"+=75px",'opacity':'1'},250,function(){
-                    setTimeout(function(){
-                        thisForm.unbind('submit').submit();
-                    },600);
+            /*loginbox.animate({'opacity':'1'},250,function(){$('.user_name').text(userinput.val());
+                userinput.animate({'opacity':'1'},250,function(){
+                    setTimeout(function(){thisForm.unbind('submit').submit();
+                },600);
                 });
-            });
+            });*/
+    thisForm.unbind('submit').submit();
             return true;
-        }       
+        }      
     });
 
     $('#username, #password').on('keyup',function(){

@@ -7,7 +7,7 @@ class UsersTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$user=array(['usuario'=>'Alfonso', 'password'=>'666', 'conf_pass'=>'666',
+		$user=array(['usuario'=>'Poncho', 'password'=> Hash::make('poncho'), 'conf_pass'=>'poncho',
 		 'created_at'=> new DateTime,'updated_at'=> new DateTime]);
 		DB::table('users')->insert($user);
 	}

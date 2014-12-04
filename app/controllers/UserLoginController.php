@@ -81,7 +81,7 @@ class UserLogin extends \BaseController {
 	{
 		//
 	}
-
+/*
 public function user()
 {
 	$userdata = array('usuario'=>Input::get('username'),
@@ -89,14 +89,15 @@ public function user()
 	);
 
 	if (Auth::attempt($userdata)) {
-		# code...
+	
 
-		return View::make('occations');
+		return Redirect::make('occations');
 	}
 	else
 	{
-		return Redirect::to('/')->with('login_errors',true);
+		return Redirect::to('')->with('message_error',true);
+		return Redirect::to('occations')->with('message_error',true);
 	}
 }
-
+*/
 }

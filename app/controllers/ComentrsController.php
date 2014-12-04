@@ -32,13 +32,13 @@ class ComentrsController extends \BaseController {
 	 * @param Reportr $report
 	 * @return Response
 	 */
-	public function store(Reportr $report)
+	public function store(Report $report)
 	{
 		$input=Input::all();
 		$input['report_id'] = $report->id;
 		$input['user_id'] = 1;
 		Comentr::create($input);
-		return Redirect::route('reports.create',$report->id)->with('Comentario guardado.');
+		return Redirect::route('comentrs.create',$report->id)->with('Comentario guardado.');
 	}
 
 	/**
